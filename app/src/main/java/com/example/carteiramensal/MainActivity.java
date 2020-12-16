@@ -2,6 +2,7 @@ package com.example.carteiramensal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -81,6 +82,30 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        entradaBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent trocaAct =  new Intent(MainActivity.this, VisualizarEventos.class);
+
+                trocaAct.putExtra("acao", 0);
+
+                startActivity(trocaAct);
+            }
+        });
+
+        saidaBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent trocaAct =  new Intent(MainActivity.this, VisualizarEventos.class);
+
+                trocaAct.putExtra("acao", 1);
+
+                //pedimos para iniciar a activity passada como parametro
+                startActivity(trocaAct);
+            }
+        });
+
     }
 
     private void MostraDataApp(){
